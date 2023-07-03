@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="ru">
+<!-- <link rel="stylesheet" href="style.css"> -->
+<!-- <style rel="stylesheet"  href="https://github.com/adbessonov/OknaRus/blob/main/style.css"></style> -->
+<link rel="stylesheet" href="https://github.com/adbessonov/OknaRus/blob/adbessonov-patch-1/style.css">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Колесниченко Михаил - aka JesusChrist">
+    <meta name="generator" content="JesusChrist">
+    <title>Калькулятор металло-конструкций || {{ title }}</title>
+
+    <link rel="canonical" href="">
+
+    <!-- <link rel="stylesheet" href="{{ url_for('static', filename='1css/bootstrap.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='1style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='1variables.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='1main.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='calc/css/style.css') }}"> -->
+
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ"
+          crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+    <!-- Bootstrap core JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+            crossorigin="anonymous"></script>
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" href="/img/favicons/apple-touch-icon.png" sizes="180x180">
+    <link rel="icon" href="/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
+    <link rel="icon" href="/img/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
+    <link rel="manifest" href="/img/favicons/manifest.json">
+    <link rel="mask-icon" href="/img/favicons/safari-pinned-tab.svg" color="#7952b3">
+    <link rel="icon" href="/img/favicons/favicon.ico">
+
+</head>
+
+<body>
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-white">
+    <!-- Container wrapper -->
+    <div class="container justify-content-center justify-content-md-between">
+        <!-- Toggle button -->
+        <button class="navbar-toggler border py-2 text-dark" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarLeftAlignExample" aria-controls="navbarLeftAlignExample"
+                aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            <i class="bi bi-cart-fill"></i>
+        </button>
+        <!-- Collapsible wrapper -->
+        <div class="collapse navbar-collapse" id="navbarLeftAlignExample">
+            <!-- Left links -->
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                {%- for item in current_menu.children recursive -%}
+                <li class="nav-item">
+                    <a class="nav-link px-2" aria-current="page" href="{{ item.url }}">{{ item.text }}</a>
+                </li>
+                {%- if item.children -%}
+
+                {{ loop(item.children) }}
+
+                {%- endif -%}
+                </li>
+                {%- endfor -%}
+            </ul>
+            <!-- Left links -->
+        </div>
+    </div>
+    <!-- Container wrapper -->
+</nav>
+<!-- Navbar -->
+
+<div class="calc-container flex-container">
+    <div class="box">
+        <h1>Расчёт стоимости профиля</h1>
+        <div class="first">
+            <img src="static/calc/img/number.png" alt="">
+            <p class="text-1">простых шага, чтобы узнать стоимость профиля </p>
+        </div>
+        <div class="text-block-3">
+            <div class="ellipse1"></div>
+            <div class="ellipse2"></div>
+            <div class="dots"></div>
+            <p class="text-2">Выберите характеристики, производителя и размер профиля</p>
+            <p class="text-3">Нажмите кнопку “Рассчитать стоимость”</p>
+        </div>
+    </div>
+    <div class="p-10">
+    </div>
+    <style>
+        select {
+            appearance: none; /* Скрыть стандартную стрелку */
+            padding-right: 20px; /* Отступ для знака плюс */
+            background: url('https://wp.profi-bro.ru/static/calc/img/149138.png') no-repeat right center; /* Добавить знак плюс как картинку */
+            background-size: 15px; /* Задать размер картинки */
+        }
+
+        @media (min-width: 900px) {
+            .flex-container {
+                display: flex;
+                justify-content: space-around;
+                align-items: end;
+                flex-wrap: wrap;
+                height: 100%;
+                padding: 15px;
+                gap: 5px;
+
+            }
+
+            .new-line {
+                flex-basis: 100%;
+                height: 0;
+            }
+
+            .box {
+                height: 434px;
+            }
+
+            .calc-container {
+                max-width: 100%;
+            }
+
+            .futter {
+                display: none;
+                order: 1;
+                width: unset;
+            }
+
+            .images-full {
+                order: 2;
+            }
+        }
+
+        .flex-container > div {
+
+        }
+
+
+    </style>
+    <div id="feedback-form" class="inputs">
+        <label class="text-field__label" for="type">Тип конструкции</label>
+        <select class="text-field__input" type="text" name="type" id="type" placeholder="Тип конструкции"></select>
+        <label class="text-field__label" for="season">Сезон</label>
+        <select class="text-field__input" type="text" name="season" id="season" placeholder="Сезон" disabled></select>
+        <label class="text-field__label" for="manufacturer">Производитель</label>
+        <select class="text-field__input" type="text" name="manufacturer" id="manufacturer" placeholder="Производитель"
+                disabled>
+        </select>
+        <label class="text-field__label" for="serie">Серия</label>
+        <select class="text-field__input" type="text" name="serie" id="serie" placeholder="Серия" disabled></select>
+        <label class="text-field__label" for="height">Высота</label>
+        <input class="text-field__input" type="text" required onfocus="this.value=''" name="height" id="height"
+               placeholder="Высота в мм." pattern="^[ 0-9]+$" value="1000">
+        <label class="text-field__label" for="width">Ширина</label>
+        <input class="text-field__input" type="text" required onfocus="this.value=''" name="width" id="width"
+               placeholder="Ширина в мм." pattern="^[ 0-9]+$" value="1000">
+        <label class="text-field__label" for="color">Цвет конструкции</label>
+        <div id="color" class="input-group colorpicker-component">
+            <input type="text" id="productСolor" value="#FFFFFF" class="form-control"
+                   style="height: 38px !important;border-radius: 5px 0 0 5px;border: 0.5px solid rgb(18, 13, 255);"/>
+            <span class="input-group-addon">
+                <i id="color_ral"></i>
+            </span>
+        </div>
+    </div>
+    <div class="new-line"></div>
+    <div class="images-full">
+        <div class="button-div">
+            <button id="cost" class="button-price"><p>Рассчитать стоимость</p></button>
+            <div class="price">
+                <div class="p-10 product-cost">
+                    <span id="result">3990</span>
+                    <span class="prod"> р./1м2</span>
+                </div>
+            </div>
+        </div>
+        <div class="image-container">
+            <a id="myBtn"><img class="image1" id="image"
+                               src="https://static.tildacdn.com/stor6362-3638-4334-b231-663561303839/39149693.jpg"
+                               alt="EUROLINE"/></a>
+            <div class="image1">
+                <div class="scheme">
+                    <img id="productConstructionImg" src="static/calc/img/okno-01.jpg" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="futter">
+        <div class="futter-text">
+            <div class="futter-text-1">
+                <p>Не нашли подходящий вариант?</p>
+            </div>
+            <div class="p-10"></div>
+            <div class="futter-text-description">
+                <p>Наши специалисты быстро рассчитают стоимость заказа. Отправьте нам свою схему и мы свяжемся с
+                    Вами.</p>
+            </div>
+            <button type="submit" name="submit" class="futter-button-contact-b">
+                <p>Запросить расчёт</p>
+            </button>
+            <div class="p-10"></div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div id="myModal" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+        <span class="close">←</span>
+        <img class="image1" id="image"
+             src="https://static.tildacdn.com/stor6362-3638-4334-b231-663561303839/39149693.jpg">
+        <span id="productSeries">EUROLINE</span> <span id="productType">Пластиковый профиль</span>
+        <span id="productBrand">VEKA</span>
+        <div class="productCost"><span class="prod" id="productCost">3990</span><span
+                class="prod"> р./1м2</span>
+            <button class="modalbutton-price"><p>Заказать</p></button>
+        </div>
+        <p id="productDescription">
+            <strong>Количество камер: </strong>4<br/><strong>Монтажная глубина: </strong>58 мм<br/><strong>Толщина
+            наружной стенки: </strong>3 мм<br/><strong>Толщина стеклопакета: </strong>от 4 до 32 мм<br/><strong>Сопротивление
+            теплопередаче: </strong>0,64 м2хС/Вт<br/><strong>Количество контуров уплотнения: </strong>2<br/><strong>Высота
+            комбинации коробка + створка: </strong>113 мм<br/><strong>Высота фальца: </strong>18 мм
+        </p>
+    </div>
+
+</div>
+
+<!-- jQuery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-colorpicker/2.3.3/css/bootstrap-colorpicker.min.css"
+      rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-colorpicker/2.3.3/js/bootstrap-colorpicker.min.js"></script>
+<!-- 
+<script src="{{ url_for('static', filename='script.js') }}"
+        crossorigin="anonymous"></script> -->
+<script src="https://raw.githubusercontent.com/adbessonov/OknaRus/main/dump_script.js"></script>
+
+</body>
+</html>
