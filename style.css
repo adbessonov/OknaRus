@@ -1,3 +1,4 @@
+<style>
 .width50 {
     width: 50px !important;
     height: 50px !important;
@@ -251,7 +252,7 @@
 
 .futter-text-description p {
     width: 236px;
-    #font-size: 12px;
+    font-size: 12px;
     font-weight: 300;
     line-height: 100%;
     color: white;
@@ -451,3 +452,4 @@ select[disabled] {
 .error-field {
     background: lightgreen;
 }
+</style>
