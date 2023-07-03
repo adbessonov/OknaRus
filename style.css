@@ -1,0 +1,453 @@
+.width50 {
+    width: 50px !important;
+    height: 50px !important;
+}
+
+/* new */
+.price {
+    width: 100%;
+    padding-top: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.price p {
+    width: 114px;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 100%;
+    text-align: center;
+    color: rgba(34, 34, 34, 1);
+}
+
+.button-price {
+    padding-left: 21px;
+    padding-right: 21px;
+    padding-top: 13px;
+    padding-bottom: 13px;
+    background-color: rgba(47, 39, 152, 1);
+    border-radius: 33px;
+    margin-top: 1rem;
+}
+
+.button-price p {
+    padding-bottom: unset;
+    margin-bottom: unset;
+    font-weight: 700;
+    color: white;
+}
+
+.button-div {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.inputs {
+    display: flex;
+    flex-direction: column;
+    max-width: 290px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.text-block-3 {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0px 24px 0px 24px;
+}
+
+.text-block-3 p {
+    color: rgb(255, 255, 255);
+    font-size: 14px;
+    font-weight: 400;
+    text-align: left;
+    width: 225px;
+}
+
+.text-3 {
+    margin: 0;
+    position: absolute;
+    top: 82%;
+    transform: translate(0, -50%);
+}
+
+.text-2 {
+    margin: 0;
+    position: absolute;
+    top: 64%;
+    transform: translate(0, -50%);
+}
+
+.text-1 {
+    width: 178px;
+    color: rgb(255, 255, 255);
+    font-size: 14px;
+    font-weight: 700;
+    padding-left: 20px;
+    text-align: left;
+}
+
+.first {
+    margin: 0;
+    position: absolute;
+    top: 40%;
+    right: 35px;
+    transform: translate(0, -50%);
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0px 67px 0px 0px;
+}
+
+.box {
+    max-width: 358px;
+    background: linear-gradient(90.00deg, rgba(106, 17, 203, 1.00), rgba(37, 117, 252, 1.00) 100%);
+    box-shadow: 1px 2px 11px rgba(182, 169, 169, 0.25);
+    border-radius: 25px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 358px;
+    height: 365px;
+    position: relative;
+    padding-left: 26px;
+}
+
+.box h1 {
+    height: 58px;
+    width: 260px !important;
+    color: rgb(255, 255, 255);
+    font-size: 24px;
+    font-weight: 700;
+
+    text-align: left;
+    margin: 0;
+    position: absolute;
+    top: 6%;
+    transform: translate(0, -6%)
+}
+
+.calc-container {
+    max-width: 390px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.text-field__label {
+    color: rgb(34, 34, 34);
+    font-size: 16px;
+    font-weight: 700;
+    text-align: left;
+}
+
+.text-field__input {
+    height: 38px !important;
+    box-sizing: border-box;
+    border: 0.5px solid rgb(18, 13, 255);
+    border-radius: 5px;
+    padding-left: 15px;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.image-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+    padding-bottom: 10px;
+}
+
+.image1 {
+    margin-right: 10px;
+    width: auto;
+    height: 144px;
+}
+
+.modal-content .image1 {
+    height: auto;
+    margin-right: unset;
+}
+
+.image1 {
+    position: relative;
+    display: inline-block;
+}
+
+.scheme {
+    width: 145px;
+    height: 144px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.scheme:hover img {
+    transform: scale(3);
+    transform-origin: center;
+    transition: transform 1s;
+}
+
+.scheme p {
+    margin: auto;
+    width: 54.76px;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 20px;
+    color: black;
+}
+
+.futter {
+    width: 100%;
+    height: 330px;
+    padding-left: 37px;
+    padding-right: 37px;
+    background-color: rgba(47, 39, 152, 1);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.futter-text {
+    width: 100%;
+    height: 330px;
+    padding-top: 39px;
+    display: flex;
+    flex-direction: column;
+}
+
+.futter-text-1 {
+    padding: 10px;
+    display: inline-flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.futter-text-1 p {
+    width: 235px;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 100%;
+    color: white;
+}
+
+.futter-text-description {
+    padding: 10px;
+    display: inline-flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.futter-text-description p {
+    width: 236px;
+    #font-size: 12px;
+    font-weight: 300;
+    line-height: 100%;
+    color: white;
+}
+
+.futter-button-contact-b {
+    margin: auto;
+    border-radius: 33px;
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding-left: 21px;
+    padding-right: 21px;
+    padding-top: 13px;
+    padding-bottom: 13px;
+}
+
+.futter-button-contact-b p {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 100%;
+    color: rgba(34, 34, 34, 1);
+    padding-bottom: unset;
+    margin-bottom: unset;
+}
+
+.number-2 {
+    position: relative;
+    font-size: 134px;
+    font-weight: 700;
+    text-align: center;
+    background-image: url(https://wp.profi-bro.ru/static/calc/2.png);
+    height: 123px;
+    width: 93px;
+}
+
+.number-2 span {
+    position: absolute;
+    bottom: -26px;
+    left: 7px;
+}
+
+.dots {
+    border-left: 2px dotted white;
+    height: 68px;
+    margin-left: 2px;
+    position: absolute;
+    top: 74%;
+    left: 58px;
+    transform: translate(0, -50%);
+}
+
+.ellipse2 {
+    width: 8px;
+    height: 8px;
+    background-color: white;
+    margin: 0;
+    position: absolute;
+    top: 83%;
+    left: 16%;
+    transform: translate(0, -50%);
+    border-radius: 9999px;
+}
+
+.ellipse1 {
+    width: 8px;
+    height: 8px;
+    background-color: white;
+    margin: 0;
+    position: absolute;
+    top: 65%;
+    left: 16%;
+    transform: translate(0, -50%);
+    border-radius: 9999px;
+}
+
+.colorpicker-element .add-on i, .colorpicker-element .input-group-addon i {
+    display: block !important;
+    height: 38px !important;
+    width: 80px !important;
+    border-radius: 0 5px 5px 0;
+    border: 0.5px solid rgb(18, 13, 255);
+}
+
+.color-ral {
+    height: 38px !important;
+    border-radius: 5px 0 0 5px;
+    border: 0.5px solid rgb(18, 13, 255);
+}
+
+/* The Modal (background) */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+/* Modal Content */
+.modal-content {
+    position: relative !important;
+    width: 313px !important;
+    box-sizing: border-box !important;
+    background: rgb(255, 255, 255) !important;
+    border: 1px solid rgb(18, 13, 255) !important;
+    margin: auto !important;
+    padding: 0px 20px 20px 20px !important;
+}
+
+/* The Close Button */
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#productDescription {
+    padding-top: 1rem;
+    color: rgb(0, 0, 0);
+    font-size: 10px;
+    font-weight: 300;
+}
+
+.productCost {
+    position: relative;
+    color: rgb(0, 0, 0);
+    font-size: 14px;
+    font-weight: 500;
+}
+
+#productBrand {
+    color: rgb(132, 132, 132);
+    font-size: 10px;
+}
+
+.modalbutton-price {
+    position: inherit;
+    width: 125px;
+    height: 29px;
+    left: 55px;
+    right: 16px;
+    top: -3px;
+    bottom: 214px;
+    background: rgb(47, 39, 152);
+    border-radius: 33px;
+}
+
+.modalbutton-price p {
+    color: rgb(255, 255, 255);
+    font-size: 12px;
+    font-weight: 700;
+    text-align: center;
+    padding-top: 2px;
+}
+
+#productSeries {
+    color: rgb(0, 0, 0);
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.p-10 {
+    padding-bottom: 10px;
+}
+
+.product-cost {
+    color: rgb(34, 34, 34);
+
+    font-size: 16px;
+    font-weight: 700;
+    text-align: center;
+}
+
+strong {
+    font-weight: 700 !important;
+}
+
+select[disabled] {
+    background: linear-gradient(90.00deg, rgba(106, 17, 203, 1.00), rgba(37, 117, 252, 1.00) 100%);
+    color: #ffffff;
+}
+
+.error-field {
+    background: lightgreen;
+}
